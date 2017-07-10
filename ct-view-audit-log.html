@@ -1,0 +1,55 @@
+<link rel="import" href="../polymer/polymer.html">
+
+<!--
+`ct-view-audit-log`
+Element for displaying an entity&#39;s audit log
+
+@demo demo/index.html 
+-->
+
+<dom-module id="ct-view-audit-log">
+  <template>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style is="custom-style">
+      :host {
+        display: block;
+      }
+    </style>
+
+    <div class="table-responsive">
+      <table class="table table-striped table-bordered table-hover table-middle">
+        <thead>
+          <th>Date</th>
+          <th>Event/Action</th>
+          <th>By User</th>
+        </thead>
+        <tbody>
+          <template is="dom-repeat" items="{{ auditData }}">
+            <tr>
+              <td>[[item.dateTime]]</td>
+              <td>[[item.event]]</td>
+              <td><span>[[item.byUser.firstName]]</span> <span>[[item.byUser.lastName]]</span></td>
+            </tr>
+          </template>
+        </tbody>
+      </table>
+    </div>
+    <!--<div class="col-xs-12">
+      <nav aria-label="Page navigation">
+        <mercury-paginator perpage="50" items="{{userList}}"></mercury-paginator>
+      </nav>
+    </div>-->
+
+  </template>
+
+  <script>
+    Polymer({
+
+      is: 'ct-view-audit-log',
+
+      properties: {
+        auditData: Object
+      }
+    });
+  </script>
+</dom-module>

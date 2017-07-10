@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, user-scalable=yes">
+
+    <title>ct-view-audit-log demo</title>
+
+    <script src="../../webcomponentsjs/webcomponents-lite.js"></script>
+
+    <link rel="import" href="../../iron-demo-helpers/demo-pages-shared-styles.html">
+    <link rel="import" href="../../iron-demo-helpers/demo-snippet.html">
+    <link rel="import" href="../ct-view-audit-log.html">
+
+    <style is="custom-style" include="demo-pages-shared-styles">
+    </style>
+  </head>
+  <body>
+    <div class="vertical-section-container centered">
+      <h3>Basic ct-view-audit-log demo</h3>
+      <demo-snippet>
+        <template>
+          <ct-view-audit-log audit-data='[{"dateTime":"2017-07-10 12:00", "event":"Created", "byUser": {"id":"asdfa1234","firstName":"John","lastName":"Doe"}}]'></ct-view-audit-log>
+        </template>
+      </demo-snippet>
+    </div>
+  </body>
+</html>
